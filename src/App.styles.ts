@@ -4,6 +4,9 @@ export const Container = styled.div`
   width: 100%;
   max-width: 820px;
   margin: 0 auto;
+  @media screen and (max-width: 600px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -11,6 +14,10 @@ export const Title = styled.h1`
   font-weight: 500;
   text-align: center;
   margin: 0;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Subtitle = styled.h6`
@@ -19,6 +26,10 @@ export const Subtitle = styled.h6`
   text-align: center;
   color: #888;
   margin: 1rem 0 2rem;
+  @media screen and (max-width: 600px) {
+    font-size: 0.9rem;
+    margin: 0;
+  }
 `;
 
 export const NthChildContainer = styled.div`
@@ -26,11 +37,9 @@ export const NthChildContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 1rem;
-`;
-
-export const NthChildRow = styled.div`
-  display: flex;
-  width: 100%;
+  @media screen and (max-width: 600px) {
+    margin-top: 1rem;
+  }
 `;
 
 export const NthChildValues = styled.div`
@@ -40,6 +49,20 @@ export const NthChildValues = styled.div`
   justify-content: flex-end;
   padding-right: 2rem;
   font-family: "Courier New", Courier, monospace;
+`;
+
+export const NthChildRow = styled.div`
+  display: flex;
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.4em;
+
+    ${NthChildValues} {
+      justify-content: flex-start;
+    }
+  }
 `;
 
 export const NthChildResult = styled.div`
@@ -59,9 +82,14 @@ export const Ball = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-weight: 500;
   color: var(--color);
+  font-weight: 500;
   transition: all 0.1s linear;
+
+  @media screen and (max-width: 600px) {
+    --size: 32px;
+    font-size: 0.8rem;
+  }
 `;
 
 export const Input = styled.input<{ $hasError: boolean }>`
@@ -109,7 +137,6 @@ export const BallContainer = styled.div<{
   $noHover?: boolean;
 }>`
   display: flex;
-  gap: 4px;
   justify-content: space-between;
 
   ${(props) =>
