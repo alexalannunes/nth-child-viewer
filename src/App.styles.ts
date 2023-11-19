@@ -98,6 +98,7 @@ export const Input = styled.input<{ $hasError: boolean }>`
   padding: 6px 12px;
   --background: #fff;
   background-color: var(--background);
+  color: inherit;
 
   ${(props) =>
     props.$hasError &&
